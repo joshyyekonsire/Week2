@@ -1,0 +1,31 @@
+Higher Order Functions
+
+
+.forEach() – Loops through an array and ‘for each’ element executes a specified function.
+Example:
+numArray.forEach(function(element, index){
+    console.log(`${element} is at index ${index}`)
+})
+
+.map() – does not modify the original array. Returns a copy with the implemented changes.
+
+Example:
+const mappedArr = numArray.map(function(num){
+    return num += 2
+})
+
+.filter() – Creates new array with values filtered out. TRUE/FALSE
+
+Example:
+const filteredArr = numArray.filter(function(element){
+    return element % 2 === 0
+})
+
+.reduce() – returns a single value (acc) and goes through each current (curr) data point in the array.
+
+const reduced = numArray.reduce(function(acc, curr){
+    return acc + curr
+})
+
+
+

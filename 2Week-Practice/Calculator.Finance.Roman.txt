@@ -1,0 +1,139 @@
+
+console.log ("---------------------------------------------------------------------------");
+console.log ("                                  Sign-in ");
+console.log ("---------------------------------------------------------------------------");
+let firstName = prompt ('First name: ')
+let lastName = prompt('Last name: ')
+console.log ("---------------------------------------------------------------------------");
+let username = prompt('Email or username: ');                            
+let password = prompt('Password: ');
+let alert;
+if (username === 'joshyyekonsire@gmail.com' || 'cosmicblaze123'  && password === '1Jackson801!@#' ) { //ENTER USERNAME/PASSWORD HERE!!!!
+  alert = `Welcome ${firstName}!`;
+  console.log (alert);
+  console.log ("---------------------------------------------------------------------------");
+  console.log ("                               Calculator ");
+  console.log ("---------------------------------------------------------------------------");
+
+  
+  let firstNumber = parseFloat(prompt('Enter number: '));
+  let math = prompt('Enter operator (+, -, *, or / ): ');
+  console.log (`${firstNumber} ${math} ___ =`)
+  let secondNumber = parseFloat(prompt('Enter second number: '));
+  let result;
+  if (math === '+') {
+    result = firstNumber + secondNumber;
+  } else if (math === '-') {
+    result = firstNumber - secondNumber;
+  } else if (math === '*') {
+    result = firstNumber * secondNumber;
+  } else if (math === '/') {
+    result = firstNumber / secondNumber;
+  } else {
+    console.log (`Invalid operator: "${math}" choose either +, -, *, or /`);
+  }
+  console.log ("---------------------------------------------------------------------------");
+  console.log (`${firstNumber} ${math} ${secondNumber} = ${result}`);
+  console.log ("---------------------------------------------------------------------------");
+  //----------------------------------------------------------------------------------------
+  let math2 = prompt ('Enter second operator ( either +, -, *, or / ): ');
+  console.log (`${result} ${math2} ___ =`)
+  let thirdNumber = parseFloat(prompt('Enter number: '));
+  let result2;
+  if (math2 === '+') {
+    result2 = result + thirdNumber;
+  } else if (math2 === '-') {
+    result2 = result - thirdNumber;
+  } else if (math2 === '*') {
+    result2 = result * thirdNumber;
+  }
+  else if (math === '/') {
+    result2 = result / thirdNumber;
+  } else {
+    console.log (`Invalid operator: ${math2} choose either +, -, *, or /`);
+  }
+  console.log ("---------------------------------------------------------------------------");
+  console.log (`${result} ${math2} ${thirdNumber} = ${result2}`);
+  console.log ("---------------------------------------------------------------------------");
+} else {
+  alert = 'Username and/or password is incorrect!'
+  console.log (alert);
+};
+
+
+
+let financeStandard = prompt ('would you like to try a finance calculator? (yes) or (no)');
+if (financeStandard === 'yes') {
+
+
+// FUTURE VALUE Variables
+let FutureValue;
+let InterestRate;
+let NumOfYears;
+let InvestmentAmount;
+
+//FV Definition
+console.log ("Definition (wiki) - Future value is the value of an asset at a specific date. It measures the nominal future sum of money that a given sum of money's expected value at a specified time in the future assuming a certain interest rate, or more generally, rate of return; it is the present value multiplied by the accumulation function.");
+
+ //Banner
+  console.log ("---------------------------------------------------------------------------");
+console.log('                    FUTURE VALUE OF AN INVESTMENT                             ')
+  console.log ("---------------------------------------------------------------------------");
+
+//Questions for user / Prompt/Input
+console.log(' ');
+console.log("Let's start with the amount being invested.");
+console.log(' ');
+InvestmentAmount = prompt("Investment Amount:");
+console.log(' ');
+console.log("What is the current interest rate being offered?");
+console.log(' ');
+InterestRate = prompt("Interest Rate:");
+console.log(' ');
+console.log("How long will your money be invested?");
+console.log(' ');
+NumOfYears = prompt("Number of Years:");
+console.log(' ');
+
+console.log(' ');
+
+//FV Formula
+FutureValue = InvestmentAmount * (1 + (InterestRate * NumOfYears));
+
+//Answer
+console.log(`The Future Value is: ${FutureValue}`);
+
+} else {
+  let romanAsk = prompt ('Would you like to try a roman numeral converter? (yes) or (no)');
+  if (romanAsk === 'yes') {
+ console.log ("---------------------------------------------------------------------------");
+console.log('                    Roman Numeral Converter                            ')
+ console.log ("---------------------------------------------------------------------------");
+    let roman = prompt ('Enter a number: ');
+function convertToRoman(num) {
+//Break the number into Thousands, Hundreds, Tens and Ones, and write down each in turn.
+//get the digits
+const numStr=num.toString();
+const len=numStr.length;
+let Thousands=0,Hundreds= 0,Tens= 0;
+if(len>=2){Tens=parseInt(numStr[len-1-1]);}
+if(len>=3){Hundreds=parseInt(numStr[len-1-2]);}
+if(len==4){Thousands=parseInt(numStr[0]);}
+const Ones=num%10;
+const lookup=[
+    ["","I","II","III","IV","V","VI","VII","VIII","IX"],
+    ["","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"],
+    ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"],
+    ["","M","MM","MMM"]];
+return lookup[3][Thousands]+lookup[2][Hundreds]+
+lookup[1][Tens]+lookup[0][Ones];
+}
+console.log ('ROMANIZED!')
+console.log(convertToRoman(roman));
+} else if (romanAsk === 'no') {
+    console.log('=================================================================================');
+    console.log('OK thanks, Have a great day!')
+    console.log('=================================================================================');
+} else {
+    console.log ('that is an invalid response')
+}};
